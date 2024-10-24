@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday! 🎉</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Space Mono', monospace;
+        }
+
+        body {
+            background: #433878;
+            color: #fcca40;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .message {
+            text-align: center;
+            margin: 2rem 0;
+            padding: 2rem;
+            background: #7E60BF;
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+        /*
+        .message {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .message-text {
+            position: relative;
+            padding: 0.75rem 1rem;
+            background: #f0f0f0;
+            border-radius: 1rem;
+            width: fit-content;
+            overflow: hidden;
+        }
+
+        .message-text::before {
+            content: attr(data-text);
+            position: absolute;
+            left: 1rem;
+            width: 0;
+            height: 100%;
+            overflow: hidden;
+            animation: typing 3s steps(50) forwards;
+            white-space: nowrap;
+        }   
+
+        .message-text::after {
+            content: '_';
+            position: absolute;
+            left: 1rem;
+            top: 0.75rem;
+            height: 100%;
+            animation: cursor 0.8s infinite, moveRight 3s steps(50) forwards;
+            font-weight: bold;
+        }
+            */
+
+        .typewriter {
+            font-size: 1rem;
+            white-space: pre-wrap;
+            border-right: 2px solid #E4B1F0;
+            animation: typing 4s steps(40) infinite;
+            display: inline-block;
+        }
+
+        @keyframes typing {
+            0%, 100% { border-color: transparent }
+            50% { border-color: #E4B1F0 }
+        }
+        /*
+        @keyframes typing {
+            0% { width: 0; }
+            100% { width: calc(100% - 2rem); }
+        }
+
+        @keyframes cursor {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+         }
+
+        @keyframes moveRight {
+            0% { left: 1rem; }
+            100% { left: calc(100% - 1rem); }
+        }
+
+        .message-text:nth-child(2)::before,
+        .message-text:nth-child(2)::after {
+            animation-delay: 3s;
+        }
+
+        .message-text:nth-child(3)::before,
+        .message-text:nth-child(3)::after {
+            animation-delay: 6s;
+        } 
+        */
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        .spotify-link {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: #E4B1F0;
+            color: #433878;
+            text-decoration: none;
+            border-radius: 25px;
+            margin: 1rem 0;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        .spotify-link:hover {
+            background: #FFE1FF;
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .surprise-button {
+            padding: 1rem 2rem;
+            background: none;
+            border: 2px solid #E4B1F0;
+            color: #FFE1FF;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            margin: 1rem 0;
+        }
+
+        .surprise-button:hover {
+            background: #E4B1F0;
+            color: #433878;
+            transform: rotate(5deg);
+        }
+
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background: #da9708;
+            animation: fall 3s linear infinite;
+            display: none;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh) rotate(360deg);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .message {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+
+<audio id="She Will Be Loved">
+    <source src="She Will Be Loved trim.mp3" type="audio/mpeg">
+  </audio>
+  
+  <script>
+    window.addEventListener('click', function () {
+      var audio = document.getElementById("She Will Be Loved");
+      if (audio) {
+        audio.play();
+      }
+    });
+  </script>
+
+<body>
+    <div class="container">
+        <div class="message">
+            <div class="typewriter">
+                "If you are a lover you have to be a fighter,
+                    coz if you cant fight for your love
+                    then what kind of lover you are :/"
+            </div>
+        </div>
+
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="img 1.jpg" alt="Selfie with glasses" />
+            </div>
+            <div class="gallery-item">
+                <img src="img 2.jpg" alt="At an event with friend" />
+            </div>
+            <div class="gallery-item">
+                <img src="img 3.jpg" alt="Sunny day selfie" />
+            </div>
+            <div class="gallery-item">
+                <img src="img 4.jpg" alt="At a formal dinner" />
+            </div>
+        </div>
+
+        <div style="text-align: center;">
+            <button class="surprise-button" onclick="showSurprise()">Click for a Birthday Surprise! 🎁</button>
+            <br>
+            <a href="https://open.spotify.com/playlist/0lWu4uUXLrygac5f3TWwAB?si=42b1a98ff754456a&pt=62bc28bc9ec05c7d7f4f15867620702a" class="spotify-link"> here for you 🎵</a>
+        </div>
+    </div>
+
+    <script>
+        function showSurprise() {
+            // Create confetti
+            for (let i = 0; i < 200; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.display = 'block';
+                confetti.style.animationDelay = Math.random() * 2 + 's';
+                document.body.appendChild(confetti);
+                
+                // Remove confetti after animation
+                setTimeout(() => {
+                    confetti.remove();
+                }, 3000);
+            }
+            
+            // Show alert
+            setTimeout(() => {
+                alert('Happy Birthday! 🎉\nYou make every day special! ❤️');
+            }, 100);
+        }
+
+        // Typewriter effect for the message
+        const message = document.querySelector('.typewriter');
+        message.style.width = '0';
+        message.style.animation = 'none';
+        
+        setTimeout(() => {
+            message.style.width = 'auto';
+            message.style.animation = 'typing 4s steps(40) infinite';
+        }, 1000);
+    </script>
+</body>
+</html>
